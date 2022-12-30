@@ -8,7 +8,6 @@ def solution(bin1,bin2):
     #10진수를 2진수로 변한
     c = bin(c)
     #앞에0b삭제
-    str(c).replace('0b','',1)
     answer = str(c).replace('0b','',1)
-    print(answer)
-solution('10','11')
+    return answer
+print(solution('10','11'))
