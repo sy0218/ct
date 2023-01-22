@@ -1,4 +1,8 @@
-a=[5,4,3,2,1]
-
-print(a[0:-2])
+s='123a'
+print()
+if s.isdigit() == False:
+    print(1)
+else:
+    print(0)
+#print(s.isdigit())
 
