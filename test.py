@@ -1,8 +1,9 @@
-a=[1,2,3,4]
-b=[1,2,3,5]
-c= []
-for i in a:
-    if i in b:
-        c.append(i)
-print(c)
-
+def solution(d, budget):
+    answer = 0
+    d.sort()
+    print(d)
+    while budget < sum(d):
+        d.pop()
+    print(len(d))
+    return len(d)
+solution([2,2,3,3],10)
