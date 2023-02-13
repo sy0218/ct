@@ -3,7 +3,7 @@ def solution(t,p):
     #print(t[0:len(p)])
     i=0
     while i+len(p)<=len(t):
-        print(t[i:i+len(p)])
+        #print(t[i:i+len(p)])
         if t[i:i+len(p)] <= p:
             answer+=1
             
