@@ -1,13 +1,19 @@
-def solution(d, budget):
-    answer = 0
-    d.sort()
-    while budget < sum(d):
-        d.pop()
-    return len(d)
-solution([2,2,3,3],10)
-
-#먼저 정렬을 한후
-#whlie 반복문
-#예산의 합이 budget보다 같아지거나 작아질때까지 pop해주기
-#반복문 종료되면 배열d의 길이를 리턴하여 지원할수 있는 부서 숫자 출력
+def solution(X, Y):
+    answer = ''
+    x_dic = {str(i):0 for i in range(10)}
+    y_dic = {str(i):0 for i in range(10)}
+    
+    
+    for i in X:
+        x_dic[i] += 1
+    for i in Y:
+        y_dic[i] += 1
+    print(y_dic)
+    
+    for i in range(9,-1,-1):
+        min_num = min(x_dic[str(i)], y_dic[str(i)])
+        print(min_num)
+        
+    return answer
+solution("100",	"203045")
 
