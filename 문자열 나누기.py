@@ -23,6 +23,7 @@ def solution(s):
                 if other_count == x_count:
                     s=s[i+1:]
                     break
+                
         answer += 1
     print(answer)
     return answer
