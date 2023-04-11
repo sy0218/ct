@@ -1,10 +1,23 @@
-def solution(n,left,right):
+def solution(progresses, speeds):
     answer = []
-    for i in range(left, right+1):
-        a=i//n
-        b=i%n
-        answer.append(max(a,b)+1)
-    print(answer)
-    return answer
-solution(3,2,5)
 
+    #리스트가 있으면 반복
+    while progresses:
+        
+        #업데이트 해줌
+        for i in range(len(progresses)):
+            progresses[i] = progresses[i]+speeds[i]
+
+        #progresses[0]이 100보다 크면 배포
+        num = 0
+        while progresses and progresses[0]>=100:
+            if progresses[0] >= 100:
+                progresses.pop(0)
+                speeds.pop(0)
+                num+=1
+            answer.append(num)
+    
+
+    print(answer)
+    return answer 
+solution([93, 30, 55],	[1, 30, 5])

@@ -12,7 +12,7 @@ def solution(clothes):
     #print(dict)
     for i in dict:
         answer *= len(dict[i])+1
-    print(answer)
-    answer-1
+    #print(answer)
+    answer = answer-1
     return answer
 solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]])
