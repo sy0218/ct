@@ -1,23 +1,33 @@
-def solution(progresses, speeds):
-    answer = []
+def solution(num):
+    list = []
+    for i in range(1,int(num**(1/2)+1)):
+        if num % i == 0:
+            if i**2 == num:
+                list.append(i)
+            else:
+                list.append(i)
+                list.append(num//i)
+    list.remove(1)
+    return list                
 
-    #리스트가 있으면 반복
-    while progresses:
-        
-        #업데이트 해줌
-        for i in range(len(progresses)):
-            progresses[i] = progresses[i]+speeds[i]
 
-        #progresses[0]이 100보다 크면 배포
-        num = 0
-        while progresses and progresses[0]>=100:
-            if progresses[0] >= 100:
-                progresses.pop(0)
-                speeds.pop(0)
-                num+=1
-            answer.append(num)
+def solution(arr):
+    answer = 0
     
-
-    print(answer)
-    return answer 
-solution([93, 30, 55],	[1, 30, 5])
+    while True:
+        if len(arr)==1:
+            break
+        list = []
+        for j in div(arr[0]):
+            if j in div(arr[1]):
+                list.append(j)
+        
+        if list:
+            arr[1] = arr[0]*arr[1]//max(list)
+        else:
+            arr[1] = arr[0]*arr[1]
+        
+        arr.pop(0)
+    print(arr)
+    return answer
+solution([2,6,8,14])
